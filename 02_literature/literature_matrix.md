@@ -1,9 +1,19 @@
 # Literature Matrix
 
-| Paper | Year | Problem | Method | Dataset/Input | Metrics | Results | Limitations | Ideas Learned |
-|---|---:|---|---|---|---|---|---|---|
-| Paper 1 | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| Paper 2 | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| Paper 3 | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| Paper 4 | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| Paper 5 | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+## Paper Selection Criteria
+
+NhĂ³m chá»n 5 bĂ i bĂ¡o dá»±a trĂªn cĂ¡c tiĂªu chĂ­ sau:
+
+1. CĂ³ liĂªn quan trá»±c tiáº¿p Ä‘áº¿n modern code review, AI-assisted code review hoáº·c automated feedback.
+2. CĂ³ nguá»“n chĂ­nh thá»©c nhÆ° IEEE, ACM, arXiv hoáº·c conference proceedings.
+3. Bao phá»§ Ä‘á»§ ná»n táº£ng lĂ½ thuyáº¿t, phÆ°Æ¡ng phĂ¡p AI/LLM, static analysis, feedback cho sinh viĂªn vĂ  metric Ä‘Ă¡nh giĂ¡.
+4. CĂ³ thá»ƒ liĂªn há»‡ trá»±c tiáº¿p vá»›i prototype AI Review cho bĂ i ná»™p hackathon.
+5. PhĂ¹ há»£p vá»›i má»¥c tiĂªu Ká»³ 5: Read & Reproduce, khĂ´ng yĂªu cáº§u Ä‘Ă³ng gĂ³p nghiĂªn cá»©u má»›i quĂ¡ lá»›n.
+
+| Paper | Year | Problem | Method | Dataset/Input | Metrics | Results | Limitations | Ideas Learned | Link |
+|---|---:|---|---|---|---|---|---|---|---|
+| Expectations, Outcomes, and Challenges of Modern Code Review | 2013 | Hiá»ƒu ká»³ vá»ng, outcome vĂ  khĂ³ khÄƒn cá»§a modern code review | Quan sĂ¡t, phá»ng váº¥n, phĂ¢n loáº¡i comment, kháº£o sĂ¡t developer/manager táº¡i Microsoft | 570 review comments, 165 managers, 873 programmers | NhĂ³m motivation, outcome, challenge, understanding needs | Review khĂ´ng chá»‰ tĂ¬m lá»—i mĂ  cĂ²n há»— trá»£ knowledge transfer, awareness vĂ  cáº£i thiá»‡n giáº£i phĂ¡p | Bá»‘i cáº£nh Microsoft, chÆ°a Ä‘Ă¡nh giĂ¡ AI review | AI Review nĂªn há»— trá»£ hiá»ƒu code vĂ  feedback, khĂ´ng thay Judge/ranking | https://doi.org/10.1109/ICSE.2013.6606617 |
+| Automating Code Review Activities by Large-Scale Pre-training | 2022 | Code review thá»§ cĂ´ng tá»‘n thá»i gian, cáº§n tá»± Ä‘á»™ng hĂ³a má»™t pháº§n | CodeReviewer pre-trained cho quality estimation, comment generation, code refinement | Code changes/reviews open-source á»Ÿ 9 ngĂ´n ngá»¯; task datasets trĂªn Zenodo | Precision, Recall, F1, Accuracy, BLEU, Exact Match | CodeReviewer vÆ°á»£t baselines trĂªn ba task code review | CĂ³ thá»ƒ há»c bias tá»« dá»¯ liá»‡u cÅ©; metric tá»± Ä‘á»™ng chÆ°a Ä‘o háº¿t usefulness | TĂ¡ch output thĂ nh score, summary, issues, suggestions dáº¡ng JSON tham kháº£o | https://doi.org/10.1145/3540250.3549081 |
+| Combining Large Language Models with Static Analyzers for Code Review Generation | 2025 | Static analyzer chĂ­nh xĂ¡c nhÆ°ng háº¹p; LLM rá»™ng hÆ¡n nhÆ°ng dá»… sai | Káº¿t há»£p CodeLlama-7B vá»›i PMD/Checkstyle qua DAT, RAG, NCO | Real-world code review dataset, Java subset, static analyzer outputs | Manual accuracy, LLM-as-judge, Cohen's kappa, coverage ranking, win-tie-loss | RAG cáº£i thiá»‡n accuracy; DAT/RAG cáº£i thiá»‡n coverage; kappa 0.72 | Chá»§ yáº¿u Java vĂ  hai static analyzers; phá»¥ thuá»™c LLM judge | Cháº¡y static checks trÆ°á»›c rá»“i dĂ¹ng LLM giáº£i thĂ­ch Ä‘á»ƒ giáº£m hallucination | https://doi.org/10.1109/MSR66628.2025.00038 |
+| Large Language Models (GPT) for Automating Feedback on Programming Assignments | 2023 | KhĂ³ sinh feedback cĂ¡ nhĂ¢n hĂ³a cho bĂ i láº­p trĂ¬nh sinh viĂªn | GPT-3.5 táº¡o personalized hints trong automated assessment platform | Student programming submissions vĂ  feedback/hint logs | Usefulness rating, successful submissions, attempts, time, affective state | Hints Ä‘Æ°á»£c Ä‘Ă¡nh giĂ¡ há»¯u Ă­ch; cĂ³ dáº¥u hiá»‡u over-reliance; khĂ´ng áº£nh hÆ°á»Ÿng Ä‘Ă¡ng ká»ƒ affective state | Bá»‘i cáº£nh classroom, khĂ´ng pháº£i full repo hackathon; feedback cĂ³ thá»ƒ sai | Feedback cho participant/mentor cáº§n dá»… hiá»ƒu, hÆ°á»›ng dáº«n, vĂ  cĂ³ human oversight | https://doi.org/10.58459/icce.2023.950 |
+| Benchmarking and Studying the LLM-based Code Review | 2025 | Benchmark cÅ© thiáº¿u PR context vĂ  metric Ä‘Ă¡nh giĂ¡ sĂ¡t thá»±c táº¿ | SWR-Bench vá»›i objective LLM-based evaluation vĂ  Multi-Review aggregation | 1,000 manually verified GitHub PRs vá»›i full project context | Precision, Recall, F1, false positives, issue coverage, human agreement | Current ACR/LLM underperform; evaluator ~90% human agreement; F1 tÄƒng tá»‘i Ä‘a 43.67% vá»›i Multi-Review | Preprint; phá»¥ thuá»™c benchmark, ground truth vĂ  LLM evaluator | DĂ¹ng useful feedback rate, false positive, expert rating, review time, format validity cho initial result | https://doi.org/10.48550/arXiv.2509.01494 |
